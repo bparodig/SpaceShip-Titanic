@@ -1,34 +1,34 @@
-# 🚀 Spaceship Titanic - From Overfitting to Reliable Machine Learning Pipeline
+# Spaceship Titanic - Improving Model Reliability Through Better Machine Learning Workflow
 
-## 📌 Project Overview
+## Project Overview
 
-This project was built using the Kaggle **Spaceship Titanic** dataset. The main objective was to predict whether a passenger was **transported to another dimension**.
+This project was developed using the Kaggle **Spaceship Titanic** dataset. The objective was to predict whether a passenger was transported to another dimension.
 
-Beyond model performance, this project became a practical lesson in one of the most important machine learning concepts:
+More than a classification project, this became a practical exercise in understanding an important machine learning lesson:
 
-> **A high notebook score does not always mean a good real-world model.**
+**A strong local validation score does not always translate into strong real-world performance.**
 
-The project was developed in two stages:
+The project was completed in two stages:
 
-1. **Initial notebook:** higher validation score, weaker real-world performance
-2. **Improved notebook:** cleaner pipeline, reduced data leakage, stronger generalization
+1. Initial notebook with a less structured workflow
+2. Improved notebook with better preprocessing, reduced data leakage, and stronger generalization
 
 ---
 
-# 🎯 Objective
+## Objective
 
 Predict the target variable:
 
-* **Transported = True**
-* **Transported = False**
+* `Transported = True`
+* `Transported = False`
 
 ---
 
-# 📊 Dataset
+## Dataset
 
 Source: Kaggle - Spaceship Titanic Competition
 
-The dataset contains passenger information such as:
+The dataset includes passenger information such as:
 
 * HomePlanet
 * CryoSleep
@@ -41,150 +41,122 @@ The dataset contains passenger information such as:
 
 ---
 
-# 🔍 Phase 1 - Initial Model (Unstructured Approach)
+## Phase 1 - Initial Model
 
-The first version of the project used a more direct workflow:
+The first version of the project used a simpler workflow:
 
-* Basic preprocessing
-* Manual transformations
-* Simpler validation structure
-* No fully structured preprocessing pipeline
+* Manual preprocessing
+* Basic feature engineering
+* Standard train/test validation
+* No structured preprocessing pipeline
 
 ### Results
 
-* **Notebook Accuracy:** ~0.82
-* **Kaggle Public Score:** ~0.75
+* Notebook Accuracy: ~0.82
+* Kaggle Public Score: ~0.75
 
-### Key Lesson
+### Main Observation
 
-Although the local score looked strong, the model did not generalize well to unseen data.
+Although the local score looked promising, the model did not generalize well to unseen data.
 
-This exposed issues such as:
+This highlighted common issues such as:
 
 * Data leakage
-* Inconsistent preprocessing
-* Over-optimistic validation
+* Inconsistent preprocessing between train and test data
+* Overly optimistic local validation
 
 ---
 
-# 🧠 Phase 2 - Improved Machine Learning Pipeline
+## Phase 2 - Improved Workflow
 
-A second version of the project was rebuilt with a more professional workflow.
+The second version of the project was rebuilt using a more reliable machine learning process.
 
 ### Improvements Implemented
 
-## ✅ Proper Data Splitting Before Preprocessing
+#### Proper Data Splitting Before Preprocessing
 
-Train/test split was applied before transformations to prevent leakage.
+Train/test split was performed before transformations to prevent leakage.
 
-## ✅ Missing Value Handling
+#### Missing Value Handling
 
-Used:
+* Numerical variables: median imputation
+* Categorical variables: most frequent value imputation
 
-* `SimpleImputer(strategy="median")` for numerical variables
-* `SimpleImputer(strategy="most_frequent")` for categorical variables
+#### Encoding
 
-## ✅ Encoding
+* OneHotEncoder with unknown-category handling
 
-Used:
+#### Validation Strategy
 
-* `OneHotEncoder(handle_unknown="ignore")`
+* StratifiedKFold
+* GridSearchCV
 
-## ✅ Cross Validation
+#### Feature Engineering
 
-Used:
-
-* `StratifiedKFold`
-* `GridSearchCV`
-
-## ✅ Feature Engineering
-
-Created predictive variables such as:
+Created additional predictive features:
 
 * `TotalGastos`
 * `HasGasto`
 * `Cryo_NoGasto`
-* `Deck / Num / Side`
+* `Deck`, `Num`, `Side`
 
-## ✅ Model Comparison
+#### Model Comparison
 
-Compared:
+Evaluated:
 
 * Random Forest
 * XGBoost
 
 ---
 
-# 🏆 Final Results
+## Final Results
 
 ### Best Model: XGBoost
 
-* **Notebook Accuracy:** ~0.81
-* **Kaggle Public Score:** **0.80313**
+* Notebook Accuracy: ~0.81
+* Kaggle Public Score: **0.80313**
 
 ---
 
-# 📈 Why This Version Was Better
+## Why the Second Version Performed Better
 
-Even though notebook accuracy was slightly lower than the first attempt:
+Even though notebook accuracy was slightly lower than the first version, the Kaggle score improved significantly.
 
-* Real-world Kaggle performance improved significantly
-* Gap between validation and unseen data became much smaller
-* Model became more reliable and realistic
+This indicates:
 
-This demonstrates the importance of:
-
-> **Generalization over inflated local scores**
+* Better generalization to unseen data
+* More realistic validation process
+* Smaller gap between local and real-world performance
 
 ---
 
-# 🧠 Key Learnings
+## Key Learnings
 
-This project helped reinforce practical skills in:
+This project helped strengthen practical skills in:
 
-* Data leakage prevention
-* Proper preprocessing workflow
+* Preventing data leakage
+* Building preprocessing workflows
 * Feature engineering
 * Cross validation
 * Hyperparameter tuning
 * Model comparison
 * Real-world model evaluation
-* Kaggle competition workflow
 
 ---
 
-# 🛠️ Technologies Used
+## Final Insight
 
-* Python
-* Pandas
-* NumPy
-* Scikit-learn
-* XGBoost
-* Jupyter Notebook
+The most valuable outcome of this project was not only the final score, but learning that reliable machine learning workflows matter more than inflated local metrics.
 
 ---
 
-# 📁 Repository Files
 
-```text
-SpaceshipTitanic_v1.ipynb
-SpaceshipTitanic_v2.ipynb
-README.md
-```
-
----
-
-# 💡 Final Insight
-
-The most valuable outcome of this project was not only the final score, but understanding that:
-
-> Building a trustworthy machine learning pipeline matters more than chasing misleading local accuracy.
-
----
-
-# Author
+## Author
 
 Bruno Parodi
+
+Industrial Engineer transitioning into Data Science with a focus on practical machine learning projects and continuous improvement.
+
 
 Industrial Engineer transitioning into Data Science, focused on practical machine learning projects and continuous improvement.
 
