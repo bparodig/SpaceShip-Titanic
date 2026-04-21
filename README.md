@@ -168,9 +168,8 @@ This project helped reinforce practical skills in:
 
 ```text
 SpaceshipTitanic_v1.ipynb
-SpaceshipTitanic_v2_pipeline.ipynb
+SpaceshipTitanic_v2.ipynb
 README.md
-submission.csv
 ```
 
 ---
@@ -183,7 +182,7 @@ The most valuable outcome of this project was not only the final score, but unde
 
 ---
 
-# 👤 Author
+# Author
 
 Bruno Parodi
 
